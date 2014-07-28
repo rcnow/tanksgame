@@ -78,13 +78,13 @@ window.onload = function () {
     function Bullets () {
         this.width = 10;
         this.height = 10;
-        this.x = player1.x+player1.width/2-this.width/2;
-        this.y = player1.y-this.height/2;
+        this.x = 0;
+        this.y = 0;
         this.speed = 10;
     }
     Bullets.prototype.draw = function () {
         if (player1.shot){
-            ctx.drawImage(BulletsSprite, this.x, this.y);
+            ctx.drawImage(BulletsSprite, this.x+player1.x+player1.width/2-bullet.width/2, this.y+player1.y+player1.width/2-bullet.width/2);
         }
 
     };

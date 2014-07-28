@@ -41,20 +41,24 @@ window.onload = function () {
      };
     Player.prototype.move = function() {
         if (38 in keysDown) {
-            this.y -= this.speed;
+            if (player1.y > 0){
+               this.y -= this.speed;
+        }
             this.angle = 0;
             //console.log('up');
         }
         if (40 in keysDown) {
-            this.y += this.speed;
+            if (player1.y < canvas.height-player1.width) {
+                this.y += this.speed;
+            }
             this.angle = 180;
            //console.log('down');
         }
         if (37 in keysDown) {
-            if (player1.x >  0) {
+            if (player1.x > 0) {
                 this.x -= this.speed;
             }
-            this.angle = -90;
+           this.angle = -90;
             //console.log('left');
         }
         if (39 in keysDown) {
